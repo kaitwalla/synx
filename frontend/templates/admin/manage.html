@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Manage{% endblock %}
+{% block content %}
+  <div>
+      <input id="musicLibaryLocation" value="{{ music_lib }}">
+      <button class="primary" id="btnLocation">Update location</button>
+      <button class="secondary" id="btnRefreshLibrary">Refresh library</button>
+      <button class="warning" id="btnClearLibrary">Clear library</button>
+  </div>
+  <div 
+{% endblock %}
+{% block scripts %}
+  <script>
+    let locationBtn = document.getElementById('btnLocation');
+    locationBtn.addEventListener('click', function() {
+      let newLocation = document.getElementById('musicLibaryLocation').value;
+      if (newLocation) {
+        let locationUpdate = new Ajax('/api/updateLocation/' + newLocation);
+      }
+    });
+    
+    let refreshBtn = document.getElementById('btnRefreshLibrary');
+
+  </script>
+{% endblock %}

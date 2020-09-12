@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+  <div>
+      {% if songs %}
+        Songs go here
+      {% else %}
+        No songs loaded. <a href="/manage">Manage Library</a>
+      {% endif %}
+  </div>
+{% endblock %}
